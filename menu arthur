@@ -1,7 +1,7 @@
 --[[
 
-	Rayfield Interface Suite
-	by Sirius
+	Arthur menu 
+	by Arthur
 
 	shlex | Designing + Programming
 	iRay  | Programming
@@ -175,7 +175,7 @@ local function loadSettings()
 	
 	if not success then 
 		if writefile then
-			warn('Rayfield had an issue accessing configuration saving capability.')
+			warn('Arthur menu.')
 		end
 	end
 end
@@ -656,12 +656,12 @@ repeat
 	correctBuild = false
 
 	if not warned then
-		warn('Rayfield | Build Mismatch')
+		warn('Arthur menu | Build Mismatch')
 		print('Rayfield may encounter issues as you are running an incompatible interface version ('.. ((Rayfield:FindFirstChild('Build') and Rayfield.Build.Value) or 'No Build') ..').\n\nThis version of Rayfield is intended for interface build '..InterfaceBuild..'.')
 		warned = true
 	end
 
-	toDestroy, Rayfield = Rayfield, useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
+	toDestroy, Rayfield = Rayfield, useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://104847407938213")[1]
 	if toDestroy and not useStudio then toDestroy:Destroy() end
 
 	buildAttempts = buildAttempts + 1
@@ -682,16 +682,16 @@ end
 
 if gethui then
 	for _, Interface in ipairs(gethui():GetChildren()) do
-		if Interface.Name == Rayfield.Name and Interface ~= Rayfield then
+		if Interface.Name == Rayfield.Name and Interface ~= Arthur menu then
 			Interface.Enabled = false
-			Interface.Name = "Rayfield-Old"
+			Interface.Name = "Arthur menu"
 		end
 	end
 elseif not useStudio then
 	for _, Interface in ipairs(CoreGui:GetChildren()) do
-		if Interface.Name == Rayfield.Name and Interface ~= Rayfield then
+		if Interface.Name == Arthur menu.Name and Interface ~= Rayfield then
 			Interface.Enabled = false
-			Interface.Name = "Rayfield-Old"
+			Interface.Name = "Arthur menu"
 		end
 	end
 end
@@ -711,7 +711,7 @@ end
 
 -- Object Variables
 
-local Main = Rayfield.Main
+local Main = Arthur menu.Main
 local MPrompt = Rayfield:FindFirstChild('Prompt')
 local Topbar = Main.Topbar
 local Elements = Main.Elements
@@ -942,7 +942,7 @@ local function LoadConfiguration(Configuration)
 		else
 			warn("Rayfield | Unable to find '"..FlagName.. "' in the save file.")
 			print("The error above may not be an issue if new elements have been added or not been set values.")
-			--RayfieldLibrary:Notify({Title = "Rayfield Flags", Content = "Rayfield was unable to find '"..FlagName.. "' in the save file. Check sirius.menu/discord for help.", Image = 3944688398})
+			--RayfieldLibrary:Notify({Title = "Arthur Flags", Content = "Rayfield was unable to find '"..FlagName.. "' in the save file. Check sirius.menu/discord for help.", Image = 3944688398})
 		end
 	end
 
@@ -1023,7 +1023,7 @@ function RayfieldLibrary:Notify(data) -- action e.g open messages
 				newNotification.Icon.Image = getAssetUri(data.Image)
 			end
 		else
-			newNotification.Icon.Image = "rbxassetid://" .. 0
+			newNotification.Icon.Image = "rbxassetid://104847407938213" .. 0
 		end
 
 		-- Set initial transparency values
@@ -3972,4 +3972,4 @@ task.delay(4, function()
 	end
 end)
 
-return RayfieldLibrary
+return Arthur menu
